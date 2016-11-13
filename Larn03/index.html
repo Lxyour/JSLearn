@@ -1,0 +1,92 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-cmn-Hans">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>JavaScript - 03</title>
+</head>
+<body>
+	<script>
+		var gender = 3;
+		/*if (gender == 1) {
+			console.log('你是男的')
+		}else if (gender == 2){
+			console.log('你是妹子')
+		}else {
+			console.log('你是春哥！')
+		}*/
+		
+		switch(gender) {
+			case 1:
+				console.log('你是男的');
+				break;
+			case 2:
+				console.log('你是妹子');
+				break;
+			case 3:
+				console.log('你是春哥吗？');
+				break;
+			default:
+				console.log('不知道你的性别，难道你是人妖？');
+		}
+		
+		
+		
+		var eat = "xxdd";
+		if(eat == "rice"){ // 如果满足条件
+				console.log("吃米饭");
+		}else if(eat == "noodles"){
+				console.log("吃面条");
+		} else { // 所有都不满足，只能选最后的了
+				console.log("只有馒头了啊");
+		}
+		
+		
+		var eat = 1;
+		// 为方便 switch 做判断，1 表示粥，2 表示米饭，3 表示面条，4 表示馒头
+		switch(eat){
+				case 1: // 然而今天并没有粥，选粥的默认给米饭
+				case 2:
+						console.log("米饭");
+						break; // 拿饭走人
+				case 3:
+						console.log("面条");
+						break; // 拿面走人
+				// 所有都不满足，只能选最后的了
+				default:
+						console.log("馒头");
+		}
+		
+		var arr = ['a', 'b', 'c'];
+		/*for (var num = 0; num < arr.length; num++) {
+			console.log(arr[num]);
+		}*/
+		arr.map(function(val, key) {
+			console.log(val)
+			console.log(key)
+		})
+		
+		/*var num = 0;
+		while(num < arr.length) {
+			console.log(arr[num]);
+			num++;
+		}*/
+		
+		/*for (var key in arr) {
+			console.log(arr[key])
+		}*/
+		
+		/*arr.forEach((val, key) => {
+			console.log(val);
+			console.log(key)
+		})*/
+		
+		var myArr = [['a', 'b'], ['x', 'y']];
+		for (var i = 0; i < myArr.length; i++) {
+			for ( var j = 0; j < myArr[i].length; j++) {
+				console.log(myArr[i][j])
+			}
+		}
+		
+	</script>
+</body>
+</html>
