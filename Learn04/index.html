@@ -1,0 +1,74 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-cmn-Hans">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>Javascript-04 函数</title>
+</head>
+<body>
+	<input type="text" id="valueA"> +
+	<input type="text" id="valueB"> = 
+	<span id="sumValue"></span>
+	<button id="addBtn">求和</button>
+	<script>
+		/*var x = 1;
+		var y = 2;
+		var sum = x + y;
+		console.log(sum);
+		var a = 5;
+		var b = 6;
+		var sum2 = a + b;
+		console.log(sum2)*/
+		
+		function add(x, y) {
+			var result = x + y;
+			console.log(result)
+			if(result) {
+				return true;
+			}
+			return false;
+		}
+		
+		var res = add(3, 9)
+		if(res) {
+			alert('计算成功！')
+		}else {
+			alert('计算失败！')
+		}
+		
+		/*window.onload = function () {
+			addBtn.onclick = function () {
+				var valueA = document.getElementById('valueA').value;
+			var valueB = document.getElementById('valueB').value;
+			var addBtn = document.getElementById('addBtn');
+				var sumValue = document.getElementById('sumValue');
+				
+				var a = Number(valueA)
+				var b = Number(valueB)
+				
+				var res = add(a, b)
+				sumValue.innerHTML = res;
+			}
+		}
+		*/
+		
+		function maxNum(x, y) {
+			if( x > y) {
+				return x;
+			}else if (y > x) {
+				return y;
+			}else {
+				return '我们是相等的！';
+			}
+		}
+		
+		var maxValue = maxNum(15, 9);
+		console.log(maxValue)
+		
+		var zs = 130;
+		var ls = 112;
+		var report = zs > ls ? '张三比较重' : '李四比较重';
+		console.log(report)
+		
+	</script>
+</body>
+</html>
