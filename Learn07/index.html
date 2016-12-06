@@ -1,0 +1,22 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-cmn-Hans">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>BOM对象</title>
+</head>
+<body>
+	<script>
+		var ua = navigator.userAgent.toLocaleLowerCase()
+		console.log(ua)
+		if(ua.indexOf('chrome') != -1) {
+			console.log('你用的是谷歌浏览器')
+		}else if(ua.indexOf('firefox') != -1) {
+			console.log('你用的是火狐浏览器')
+		}else if (ua.indexOf('edge') != -1){
+			console.log('你用的是IE浏览器')
+		}else {
+			console.log('未知浏览器')
+		}
+	</script>
+</body>
+</html>

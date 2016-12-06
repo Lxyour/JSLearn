@@ -1,0 +1,30 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-cmn-Hans">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>DOM对象</title>
+	<style>
+		* {
+			margin: 0;
+			padding: 0;
+		}
+	</style>
+</head>
+<body>
+<div style="height:1200px;"></div>
+	<script>
+		var cw= document.documentElement.clientWidth || document.body.clientWidth;
+var ch= document.documentElement.clientHeight || document.body.clientHeight;
+		var sw=document.documentElement.scrollWidth || document.body.scrollWidth;
+var sh=document.documentElement.scrollHeight || document.body.scrollHeight;
+		var cWidth = document.documentElement.offsetWidth;
+		var cHeight = document.documentElement.offsetHeight;
+		console.log(cw)
+		console.log(ch)
+		console.log(sw)
+		console.log(sh)
+		console.log(cWidth)
+		console.log(cHeight)
+	</script>
+</body>
+</html>

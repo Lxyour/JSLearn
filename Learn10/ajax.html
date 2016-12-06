@@ -1,0 +1,58 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-cmn-Hans">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>Ajax</title>
+	<style>
+		table td {
+			padding: 0 10px;
+		}
+	</style>
+</head>
+<body>
+	<div class="goods-list">
+		<table>
+			<thead>
+				<tr><th>编号</th><th>商品名称</th><th>价格(元)</th><th>SKU</th><th>操作</th></tr>
+			</thead>
+			<tbody id="goods">
+				
+			</tbody>
+		</table>
+	</div>
+	<script src="js/jquery-2.2.4.js"></script>
+	<script>
+		var LXY = {
+			each: function (arr, callback) {
+				var list = arr || [];
+				for(var i=0; i < list.length; i++) {
+					var tmp = callback(i, list[i]);
+				}
+				return tmp;
+			}
+		}
+		$.ajax({
+			url: 'js/data.json',
+			type:'GET',
+			dataType: 'json',
+			success: function (res) {
+				console.log(res)
+				if(res && res.code == 200) {
+					var list = res.data.list;
+					var listDOM = '';
+					LXY.each(list, function(key, val) {
+						console.log(val)
+						listDOM += '<tr data-id="' + val.id +'"><td>' + val.id + '</td><td>'+ val.name +'</td><td>'+ (val.price / 100).toFixed(2) +'</td><td>'+ val.sku +'</td><td class="delete">删除</td></tr>';
+					})
+					
+					$('#goods').append(listDOM)
+				}
+				
+			},
+			error: function (err) {
+				console.log(err)
+			}
+		})
+	</script>
+</body>
+</html>

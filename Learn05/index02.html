@@ -1,0 +1,24 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-cmn-Hans">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>Document</title>
+</head>
+<body>
+		<p id="pid" title="I learn JavaScript">JavaScript</p>
+		<button id="btn">click</button>
+		<script type="text/javascript">
+				var btn = document.getElementById("btn");
+				var pid = document.getElementById('pid');
+				btn.onclick = function () {
+					attr(pid)
+				}
+				function attr(el) {
+						alert(el.getAttribute("id"));
+						alert(el.getAttribute("title"));
+						el.setAttribute("title", "hello");
+						alert(el.getAttribute("title"));
+				}
+		</script>
+</body>
+</html>

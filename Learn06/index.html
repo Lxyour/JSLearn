@@ -1,0 +1,37 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-cmn-Hans">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>JS对象</title>
+</head>
+<body>
+	<script>
+		var obj = {
+			content: '这是一个对象',
+			arr: ['xxxx', 'yyyyy'],
+			add: function (x, y) {
+				var sum = x + y;
+				return sum;
+			},
+			num: 12580,
+			o: {
+				name: 'xiaoming',
+				age: 23,
+				relative: ['爸爸','妈妈','哥哥','姐姐']
+			}
+		};
+		console.log(obj.content)
+		console.log(obj.add(3, 8))
+
+		var message = "Hello World!";
+var upmess = message.toUpperCase();
+console.log(upmess);
+		
+		var nowTime = new Date();
+		var year = nowTime.getFullYear();
+		var month = nowTime.getMonth() + 1;
+		var date = nowTime.getDate();
+console.log(year+ '-' + month + '-' + date);
+	</script>
+</body>
+</html>

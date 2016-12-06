@@ -1,0 +1,29 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-cmn-Hans">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>setTimeout</title>
+</head>
+<body>
+	<input type="text" id="count">
+	<input type="button" id="istart" value="Start">
+	<input type="button" id="istop" value="Stop">
+	<script type="text/javascript">
+		var setID;
+var num = 0;
+function startCount(){
+    document.getElementById('count').value = num;
+		num = num + 1;
+		setID = setTimeout("startCount()", 1000);
+	}
+	var istart = document.getElementById("istart");
+	istart.onclick = function () {
+		startCount();
+	}
+	var istop = document.getElementById("istop");
+	istop.onclick = function () {
+		clearTimeout(setID);
+	}
+	</script>
+</body>
+</html>

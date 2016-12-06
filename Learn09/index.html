@@ -1,0 +1,73 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-cmn-Hans">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>Jquery-01</title>
+	<style>
+		.hide {
+			display: none;
+		}
+		.content {
+			position: relative;
+		}
+	</style>
+</head>
+<body>
+	<div class="content" id="box">
+		<ul>
+			<li>itmes01</li>
+			<li>itmes02</li>
+			<li>itmes03</li>
+			<li>itmes04</li>
+			<li>itmes05</li>
+		</ul>
+	</div>
+	<input type="button" id="btn" value="切换class"/>
+	<p>这是一段文件</p>
+	<p>这是二段文件</p>
+	<script src="js/jquery-2.2.4.js"></script>
+	<script>
+		$(document).ready(function() {
+			var dom = $('<div>这是一个节点</div>');
+			$(dom).appendTo('body');
+
+			var box = $('#box');
+			box.attr('title','盒子标题')
+			var li = $('.content').find('li');
+			$('p').addClass('pbox');
+
+			$('body').on('keyup',function(e) {
+				console.log(e)
+				var keyCode = e.keyCode;
+				if(keyCode == 13) {
+					console.log('你按了回车键！')
+				}
+			})
+			$('#btn').click(function() {
+				box.fadeIn().animate({top: '150px'})
+			})
+		})
+		
+		$(function() {
+			var dom = $('<div>这是一个节点</div>');
+			$(dom).appendTo('body');
+
+			var box = $('#box');
+			box.attr('title','盒子标题')
+			var li = $('.content').find('li');
+			$('p').addClass('pbox');
+
+			$('body').on('keyup',function(e) {
+				console.log(e)
+				var keyCode = e.keyCode;
+				if(keyCode == 13) {
+					console.log('你按了回车键！')
+				}
+			})
+			/*$('#btn').click(function() {
+				box.slideToggle(5000)
+			})*/
+		})
+	</script>
+</body>
+</html>

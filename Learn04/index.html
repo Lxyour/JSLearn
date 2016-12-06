@@ -36,10 +36,10 @@
 		}
 		
 		/*window.onload = function () {
+			var addBtn = document.getElementById('addBtn');
 			addBtn.onclick = function () {
 				var valueA = document.getElementById('valueA').value;
 			var valueB = document.getElementById('valueB').value;
-			var addBtn = document.getElementById('addBtn');
 				var sumValue = document.getElementById('sumValue');
 				
 				var a = Number(valueA)
@@ -48,10 +48,26 @@
 				var res = add(a, b)
 				sumValue.innerHTML = res;
 			}
-		}
-		*/
+		}*/
+		//单行注释dddsdfddfgdfgsfdws
+		//sdgfd
 		
+		/* 我是多行注释
+		*  这里也是注释
+		* 这里的代码也不执行，只是用来说明程序逻辑的
+		*/
+
+		
+		/** 求最大值
+		 * 用于比较两个数值之间的大小，并返回最大值。
+		 * @param x 传入一个Number值
+		 * @param y 传入一个Number值
+		 * @return 返回两个数值之间的最大值
+		 */
 		function maxNum(x, y) {
+			if (typeof(x) != 'number' || typeof(y) != 'number') {
+				return '你传入的不是一个数字';
+			}
 			if( x > y) {
 				return x;
 			}else if (y > x) {
@@ -61,8 +77,18 @@
 			}
 		}
 		
-		var maxValue = maxNum(15, 9);
+		var maxValue = maxNum(15, '8');
 		console.log(maxValue)
+		
+		console.log(isNaN('6'))
+		
+		function isNaN(x) {
+			if (typeof(x) != 'number'){
+				return false;
+			}else {
+				return true;
+			}
+		}
 		
 		var zs = 130;
 		var ls = 112;

@@ -1,0 +1,33 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-cmn-Hans">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>XMLHttpRequest</title>
+</head>
+<body>
+	<script>
+		var XMLHttp = null;
+		if(window.XMLHttpRequest) {
+			XMLHttp = new XMLHttpRequest();
+		}else if(window.ActiveXObject) {
+			XMLHttp = new ActiveXObject("Microsoft.XMLHTTP");
+		}
+		if(XMLHttp != null) {
+			XMLHttp.onreadystatechange = stateChange;
+			XMLHttp.open('GET', 'xxx.php', true);
+			XMLHttp.send(null)
+		}else {
+			alert('你的浏览器不支持Ajax技术！')
+		}
+		function stateChange() {
+			if(XMLHttp.readyState == 4) {
+				if(XMLHttp.status == 200 ){
+					console.log('success')
+				}
+			}
+		}
+		
+		
+	</script>
+</body>
+</html>
