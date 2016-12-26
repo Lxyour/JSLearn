@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		var userName = '小明';
+		var userName2 = 'xiaohua';
+		localStorage.setItem('name', userName)
+		localStorage.setItem('name2', userName2)
+		var name = localStorage.getItem('name')
+		console.log(name)
+		localStorage.clear()
+	</script>
+</body>
+</html>

@@ -7,6 +7,11 @@
 		table td {
 			padding: 0 10px;
 		}
+		#box {
+			width: 100px;
+			height: 100px;
+			background: #f00;
+		}
 	</style>
 </head>
 <body>
@@ -20,15 +25,19 @@
 			</tbody>
 		</table>
 	</div>
+	<div id="box"></div>
 	<script src="js/jquery-2.2.4.js"></script>
 	<script>
+		var aaa = 123;
 		var LXY = {
 			each: function (arr, callback) {
 				var list = arr || [];
 				for(var i=0; i < list.length; i++) {
-					var tmp = callback(i, list[i]);
+					callback(i, list[i]);
 				}
-				return tmp;
+			},
+			fn: function () {
+				
 			}
 		}
 		$.ajax({
@@ -36,7 +45,6 @@
 			type:'GET',
 			dataType: 'json',
 			success: function (res) {
-				console.log(res)
 				if(res && res.code == 200) {
 					var list = res.data.list;
 					var listDOM = '';
@@ -47,12 +55,19 @@
 					
 					$('#goods').append(listDOM)
 				}
-				
 			},
 			error: function (err) {
 				console.log(err)
 			}
 		})
+		
+		var box = document.getElementById('box');
+		setTimeout(function(){
+			box.style.height = '500px'
+		}, 1000)
+		setTimeout(function(){
+			box.style.width = '600px'
+		}, 2000)
 	</script>
 </body>
 </html>
